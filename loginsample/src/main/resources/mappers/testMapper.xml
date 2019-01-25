@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.login.testMapper">
+
+	<select id='test' resultType="Users">
+		 SELECT USER_ID "userId",   PASSWORD "password",  OTP_PASSWORD "otpPassword" FROM TEST_USERS
+	</select>
+	
+	<select id='validateUser' resultType="Users">
+		 SELECT USER_ID "userId",   PASSWORD "password",  OTP_PASSWORD "otpPassword" FROM TEST_USERS 
+		 WHERE USER_ID = #{username} AND PASSWORD = #{password}
+	</select>
+</mapper>
